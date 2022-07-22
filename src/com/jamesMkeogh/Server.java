@@ -8,17 +8,20 @@ import java.net.Socket;
 
 public class Server {
 
-    public static void main(String [] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         System.out.println("Server started");
 
-        ServerSocket serverSocket = new ServerSocket(9489);
+        ServerSocket serverSocket = new ServerSocket(7489);
         System.out.println("server awaiting request");
-        Socket socket= serverSocket.accept();
+        Socket s = serverSocket.accept();
         System.out.println("Client connected");
 
-        BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String str = bufferedReader.readLine();
-        System.out.println("Client data "+str);
+
+        BufferedReader br = new BufferedReader(
+            new InputStreamReader(s.getInputStream()));
+
+        String str = br.readLine();
+        System.out.println("Client data " + str);
 
 
     }

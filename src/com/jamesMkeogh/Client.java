@@ -8,15 +8,19 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) throws IOException {
-        /*  String ip = "192.168.180.118";*/
+        String ip = "192.168.180.118";
         String localhost = "localhost";
-        String msg ="outbound";
+        String msg = "out";
+
         int port; //0 -1023 to 65535
-        port = 9489;
-        Socket socket = new Socket(localhost, port);
+        port = 7489;
+
+        Socket socket = new Socket(ip, port);
+
         OutputStreamWriter os = new OutputStreamWriter(socket.getOutputStream());
         PrintWriter out = new PrintWriter(os);
+        out.write(msg);
+        out.flush();
 
-        // write your code here
     }
 }

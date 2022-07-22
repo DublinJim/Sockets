@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Date;
 
 public class DateServer {
 
@@ -17,9 +18,9 @@ public class DateServer {
         Socket client = listener.accept();
         System.out.println("[SERVER} is connected to client.");
         PrintWriter out = new PrintWriter(client.getOutputStream(),true);
-        String msg = "out";
-        /*  out.println((new Date()).toString());*/
-        out.println(msg);
+
+        out.println((new Date()));
+
         System.out.println("[SERVER} Sent date object");
 
         client.close();

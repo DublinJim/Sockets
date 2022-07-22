@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import javax.swing.JOptionPane;
 
-public class DateClient {
+public class ClientRequest {
 
     private static final String SERVER_IP = "localhost";
     private static final int SERVER_PORT = 9090;

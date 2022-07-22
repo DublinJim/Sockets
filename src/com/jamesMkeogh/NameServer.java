@@ -3,12 +3,12 @@ package com.jamesMkeogh;
 public class NameServer {
 
     private static final int PORT = 9090;
-    private static String[] names = {"Joe", "Mick", "Bob", "Paddy", "Mack", "Pippy"};
-    private static String[] desc = {"fat", "ugly", "fit", "smart", "happy", "stupid"};
+    private static final String[] names = {"Joe", "Mick", "Bob", "Paddy", "Mack", "Pippy"};
+    private static final String[] desc = {"fat", "ugly", "fit", "smart", "happy", "stupid"};
 
     public static void main(String[] args) {
 
-
+        System.out.println(getRandomName());
 
     }
 

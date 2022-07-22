@@ -11,18 +11,20 @@ public class Server {
     public static void main(String[] args) throws IOException {
         System.out.println("Server started");
 
-        ServerSocket serverSocket = new ServerSocket(7489);
+        var serverSocket = new ServerSocket(7489);
         System.out.println("server awaiting request");
         Socket s = serverSocket.accept();
         System.out.println("Client connected");
 
-
-        BufferedReader br = new BufferedReader(
+        var br = new BufferedReader(
             new InputStreamReader(s.getInputStream()));
-
+        System.out.println("passed the buffered creation");
         String str = br.readLine();
+
         System.out.println("Client data " + str);
 
+        s.close();
+        serverSocket.close();
 
     }
 }

@@ -8,7 +8,7 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) throws IOException {
-        String ip = "192.168.180.118";
+        String ip = "127.0.0.1";
         String localhost = "localhost";
         String msg = "out";
 

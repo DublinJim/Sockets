@@ -1,14 +1,13 @@
 package com.jamesMkeogh;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
 
 public class DateServer {
-    private static final int PORT=9090;
+
+    private static final int PORT = 9090;
 
 
     public static void main(String[] args) throws IOException {
@@ -17,9 +16,10 @@ public class DateServer {
         System.out.println("[SERVER} is waiting for client connection...");
         Socket client = listener.accept();
         System.out.println("[SERVER} is connected to client.");
-
-        PrintWriter out = new PrintWriter(client.getOutputStream());
-        out.println(new Date().toString());
+        PrintWriter out = new PrintWriter(client.getOutputStream(),true);
+        String msg = "out";
+        /*  out.println((new Date()).toString());*/
+        out.println(msg);
         System.out.println("[SERVER} Sent date object");
 
         client.close();

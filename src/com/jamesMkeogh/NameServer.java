@@ -22,7 +22,7 @@ public class NameServer {
 
         out.println(getRandomName());
 
-        System.out.println("[SERVER} Sent data");
+        System.out.println("[SERVER} Sent data:  closing ...");
 
         client.close();
         listener.close();

@@ -15,6 +15,7 @@ public class DateClient {
         Socket socket = new Socket(SERVER_IP, SERVER_PORT);
 
         BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        BufferedReader keyboard = new BufferedReader( new InputStreamReader(socket.getInputStream()));
 
         String serverResponse = input.readLine();
         JOptionPane.showMessageDialog(null, serverResponse);

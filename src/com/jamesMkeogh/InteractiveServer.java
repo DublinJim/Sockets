@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class NameServer {
+public class InteractiveServer {
 
     private static final int PORT = 9090;
     private static final String[] names = {"Joe", "Mick", "Bob", "Paddy", "Mack", "Pippy"};
@@ -27,9 +27,14 @@ public class NameServer {
 
         System.out.println("[SERVER} Sent data:  closing ...");
 
+        closeSockets(listener, client);
+
+    }
+
+
+    private static void closeSockets(ServerSocket listener, Socket client) throws IOException {
         client.close();
         listener.close();
-
     }
 
     public static String getRandomName() {

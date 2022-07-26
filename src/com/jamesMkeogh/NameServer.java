@@ -35,6 +35,10 @@ public class NameServer {
     public static String getRandomName() {
         int posName = (int) (Math.random() * names.length);
         String name = names[posName];
+        if (name == "Pippy") {
+            System.out.println("BONUS NAME !!!");
+
+        }
         int posDesc = (int) (Math.random() * desc.length);
         String des = desc[posDesc];
 
